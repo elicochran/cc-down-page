@@ -1,0 +1,226 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CalCentral</title>
+<style type="text/css">
+
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	background: #F2F2F2;
+	color: #222;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	line-height: 116%;
+	padding: 0;
+	margin: 0;
+}
+
+body > .content {
+	background: url("background.jpg");
+	border: none;
+	margin: 0 auto;
+	position: relative;
+	width: 960px;
+	height: 803px;
+}
+
+.mask {
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	overflow-y: hidden;
+	background: rgb(200,200,200) transparent;
+	background-color: rgba(200,200,200,0.50);
+	/* IE7, IE8 */
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2CCCCCC, endColorstr=#B2CCCCCC);
+}
+
+.message {
+	background-color: white;
+	border: 1px solid #194270;
+	position: absolute;
+	top: 218px;
+	left: 377px;
+	width: 341px;
+	height: 426px;
+}
+
+blockquote {
+    margin: 6px 0;
+}
+
+blockquote p {
+    margin:0;
+}
+
+
+/* RECTANGLE-BORDER STYLE WITH CURVE */
+
+.left {
+	font-weight: bolder;
+	color: #555;
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.rectangle-speech-border {
+	position: relative;
+	padding: 6px 9px;
+	margin: 8px 10px 0;
+	border: 3px solid #C78812;
+	text-align: left;
+	background: #fff;
+	/* css3 */
+	-webkit-border-radius: 9px;
+	-moz-border-radius: 9px;
+	border-radius: 9px;
+	width: 278px
+}
+
+.right .rectangle-speech-border  {
+	border: 3px solid #194270;
+}
+
+/* creates larger curve */
+.rectangle-speech-border:before {
+	content:"";
+	position:absolute;
+	z-index:10;
+	bottom:-18px;
+	width:25px;
+	height:15px;
+	border-style:solid;
+	background:transparent;
+    /* reduce the damage in FF3.0 */
+    display:block;
+}
+
+.left .rectangle-speech-border:before {
+	left:6px;
+	border-color: #C78812;
+	border-width: 0 3px 3px 0;
+	/* css3 */
+	-webkit-border-bottom-right-radius:40px 25px;
+	-moz-border-radius-bottomright:40px 25px;
+	border-bottom-right-radius:40px 25px;
+}
+
+.right .rectangle-speech-border:before {
+	right:6px;
+	border-color: #194270;
+	border-width:0 0px 3px 3px;
+	/* css3 */
+	-webkit-border-bottom-left-radius:40px 25px;
+	-moz-border-radius-bottomleft:40px 25px;
+	border-bottom-left-radius:40px 25px;
+}
+
+/* creates smaller curve */
+.rectangle-speech-border:after {
+	content:"";
+	position:absolute;
+	z-index:10;
+	bottom:-18px;
+	width:10px;
+	height:15px;
+	border-style:solid;
+	background:transparent;
+    display:block;
+}
+
+.left .rectangle-speech-border:after {
+	left:6px;
+	border-color:#C78812;
+	border-width:0 3px 3px 0;
+	/* css3 */
+	-webkit-border-bottom-right-radius:20px 25px;
+	-moz-border-radius-bottomright:20px 25px;
+	border-bottom-right-radius:20px 25px;
+}
+
+.right .rectangle-speech-border:after {
+	right:6px;
+	border-color: #194270;
+	border-width:0 0 3px 3px;
+	/* css3 */
+	-webkit-border-bottom-left-radius:20px 25px;
+	-moz-border-radius-bottomleft:20px 25px;
+	border-bottom-left-radius:20px 25px;
+}
+
+
+/* creates a white rectangle to cover part of the oval border*/
+.rectangle-speech-border > :first-child:after {
+	content:"";
+	position:absolute;
+	bottom:-7px;
+	left:17px;
+	width:14px;
+	height:8px;
+	background:#fff;
+}
+
+.right .rectangle-speech-border > :first-child:after {
+	left: auto;
+	right: 17px;
+}
+
+*:not(#old_ie) {
+     filter:progid:DXImageTransform.Microsoft.gradient(enabled=false) !important;
+}
+</style>
+</head>
+
+<body>
+<div class="content">
+	<div class="mask"></div>
+	<div class="message">
+		<div class="dialog">
+			<div class="left">
+				<blockquote class="rectangle-speech-border" style="width: 176px">
+					<p>Where is CalCentral?</p>
+				</blockquote>
+			</div>
+			<div class="right">
+				<blockquote class="rectangle-speech-border" style="width: 220px">
+					<p>CalCentral is currently offline.</p>
+				</blockquote>
+			</div>
+			<div class="left">
+				<blockquote class="rectangle-speech-border" style="width: 242px">
+					<p>When will CalCentral be back?</p>
+				</blockquote>
+			</div>
+			<div class="right">
+				<blockquote class="rectangle-speech-border" style="width: 140px">
+					<p>On January 25th.</p>
+				</blockquote>
+			</div>
+			<div class="left">
+				<blockquote class="rectangle-speech-border" style="width: 196px">
+					<p>Is CalCentral changing?</p>
+				</blockquote>
+			</div>
+			<div class="right">
+				<blockquote class="rectangle-speech-border">
+					<p>Yep! The new CalCentral will integrate campus services into a personal <em>dashboard</em> starting with information from your courses and groups, bConnect, Bearfacts, and more. <br>Your dashboard will include links, campus notifications, assignments and tasks from various systems relevant&nbsp;to&nbsp;you.</p>
+				</blockquote>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
